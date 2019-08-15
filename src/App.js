@@ -37,7 +37,7 @@ function App(props) {
   return (
     <div className="App">
       <div className="photoOfDay">
-        <img style={{ width: 300, height: 300 }} src={pic} />
+        <img src={pic} style={{ width: 300, height: 300 }} />
       </div>
       <p>
         {title} || {date}
