@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Header from "./components/Header";
+import ImgCard from "./components/ImgCard";
 
 function App(props) {
   const [pic, setPic] = useState();
@@ -21,6 +23,7 @@ function App(props) {
         console.log("Nasa image", imageNasa);
         setPic(imageNasa);
 
+
         const dateNasa = response.data.date;
         console.log("Nasa date: ", dateNasa);
         setDate(dateNasa);
@@ -34,25 +37,15 @@ function App(props) {
         setExpla(explanationNasa);
       });
   });
+  
   return (
     <div className="App">
       <div className="photoOfDay">
-        <img src={pic} style={{ width: 300, height: 300 }} />
-      </div>
-      <p>
-        {title} || {date}
-      </p>
-      <p>{expla}</p>
-    </div>
+        < Header date = {date} />
+      < ImgCard imgURL ={pic} imgTitle = {title} explanation = {expla} />
+   </div>
+ </div>
   );
 }
-const img = props => {
-  console.log(props);
-  return (
-    <div>
-      <img className="imageNasa" alt="asteriods" src={props.test.hdurl} />
-    </div>
-  );
-};
-//exporting data-
-export default App;
+
+export default App; 
