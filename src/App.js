@@ -19,7 +19,7 @@ function App(props) {
         const imageNasa = response.data.hdurl;
         console.log("Nasa image", imageNasa);
         setPic(imageNasa);
-
+      }
         const dateNasa = response.data.date;
         console.log("Nasa date: ", dateNasa);
         setDate(dateNasa);
@@ -32,7 +32,7 @@ function App(props) {
         console.log("Nasa explanation: ", explanationNasa);
         setExpla(explanationNasa);
       });
-  }, []);
+  };
   return (
     <div className="App">
       <div className="photoOfDay">
@@ -44,7 +44,7 @@ function App(props) {
       <p>{expla}</p>
     </div>
   );
-}
+
 
 //exporting data-
 export default App;
