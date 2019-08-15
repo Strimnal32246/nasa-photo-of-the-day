@@ -16,10 +16,11 @@ function App(props) {
       )
       .then(response => {
         //console.log(response)
+        const test = response.data;
         const imageNasa = response.data.hdurl;
         console.log("Nasa image", imageNasa);
         setPic(imageNasa);
-      }
+
         const dateNasa = response.data.date;
         console.log("Nasa date: ", dateNasa);
         setDate(dateNasa);
@@ -32,11 +33,11 @@ function App(props) {
         console.log("Nasa explanation: ", explanationNasa);
         setExpla(explanationNasa);
       });
-  };
+  });
   return (
     <div className="App">
       <div className="photoOfDay">
-        <img style={{ width: 500, height: 500 }} src={pic} />
+        <img style={{ width: 300, height: 300 }} src={pic} />
       </div>
       <p>
         {title} || {date}
@@ -44,7 +45,14 @@ function App(props) {
       <p>{expla}</p>
     </div>
   );
-
-
+}
+const img = props => {
+  console.log(props);
+  return (
+    <div>
+      <img className="imageNasa" alt="asteriods" src={props.test.hdurl} />
+    </div>
+  );
+};
 //exporting data-
 export default App;
