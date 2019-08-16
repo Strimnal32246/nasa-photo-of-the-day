@@ -3,6 +3,8 @@ import "./App.css";
 import axios from "axios";
 import Header from "./components/Header";
 import ImgCard from "./components/ImgCard";
+import { Button } from "./components/StyledWidgets.js";
+import LoaderExampleIndeterminate from "./components/Loader";
 
 function App(props) {
   const [pic, setPic] = useState();

@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-
-
-
+import React, {useState} from "react";
+import { Image, Button } from "./StyledWidgets.js";
+import { Segment } from "semantic-ui-react";
 
 
 export default function ImgCard({imgURL,imgTitle,explanation}) {
@@ -16,6 +15,9 @@ export default function ImgCard({imgURL,imgTitle,explanation}) {
             <div className = "img-card">
                 <Image src = {imgURL} alt = "nasa image of day" />
                 <h2>{imgTitle}</h2>
+                <Segment className="ui raised segment" className = "info-card">
+                    <p>{explanation}</p>
+                </Segment>
                 <br></br>
                 <Button type="primary" onClick={toggleMode}>Show less info</Button>
             </div>
