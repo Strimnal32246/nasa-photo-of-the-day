@@ -17,8 +17,8 @@ export default function ImgCard({ imgURL, imgTitle, explanation }) {
         <p>{explanation}</p>
 
         <br />
-        <Button type="primary" onClick={toggleMode}>
-          Show less info
+        <Button type="primary" className="button" onClick={toggleMode}>
+          Show less info!
         </Button>
       </div>
     );
@@ -29,7 +29,7 @@ export default function ImgCard({ imgURL, imgTitle, explanation }) {
         <h2>{imgTitle}</h2>
         <br />
         <Button type="primary" onClick={toggleMode}>
-          Show more info
+          Show more info!
         </Button>
       </div>
     );
